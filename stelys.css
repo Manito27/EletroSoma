@@ -79,6 +79,16 @@ a {
   font-weight: 800;
 }
 
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  object-fit: cover;
+  border: 2px solid rgba(244, 178, 61, 0.9);
+  border-radius: 50%;
+  background: var(--white);
+}
+
 .brand strong,
 .brand small {
   display: block;
