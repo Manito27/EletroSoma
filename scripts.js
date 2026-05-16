@@ -23,9 +23,24 @@ if (contactForm && formNote) {
 
     const data = new FormData(contactForm);
     const nome = data.get("nome") || "Cliente";
-    const servico = data.get("servico") || "servico eletrico";
+    const telefone = data.get("telefone") || "";
+    const servico = data.get("servico") || "servico eletrotecnico";
+    const mensagem = data.get("mensagem") || "Sem mensagem adicional.";
+    const recipients = "geral.electrosoma@gmail.com,malave.esoma@gmail.com";
+    const subject = `Pedido de servico - ${servico}`;
+    const body = [
+      "Novo pedido recebido pelo site da ElectroSoMa:",
+      "",
+      `Nome: ${nome}`,
+      `Telefone/WhatsApp: ${telefone}`,
+      `Tipo de servico: ${servico}`,
+      "",
+      "Mensagem:",
+      mensagem,
+    ].join("\n");
 
-    formNote.textContent = `Obrigado, ${nome}. O seu pedido de ${servico} foi registado para contacto.`;
+    formNote.textContent = `Obrigado, ${nome}. A abrir o email para enviar o pedido a ElectroSoMa.`;
+    window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     contactForm.reset();
   });
 }

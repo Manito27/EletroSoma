@@ -243,14 +243,24 @@ h1 {
 }
 
 .hero-panel strong,
-.hero-panel span {
+.hero-panel span,
+.hero-panel a {
   display: block;
 }
 
-.hero-panel span {
+.hero-panel span,
+.hero-panel a {
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.hero-panel a {
+  font-weight: 800;
+}
+
+.hero-panel a:hover {
+  color: var(--teal);
 }
 
 .trust-band {
@@ -439,6 +449,25 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.contact-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.contact-list a,
+.contact-list span {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 800;
+}
+
+.contact-list a:hover {
+  color: var(--amber);
+}
+
 .contact-form label {
   display: grid;
   gap: 7px;
@@ -493,6 +522,12 @@ textarea:focus {
 .site-footer a {
   color: var(--amber);
   font-weight: 800;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 @media (max-width: 920px) {
